@@ -7,7 +7,7 @@ export default function Card(props) {
         rating,
         price,
         reviewCount,
-        country
+        location
     } = props;
     return (
         <div className="card">
@@ -16,10 +16,10 @@ export default function Card(props) {
                 <img className="card--star" src="../images/star.png" />
                 <span>{rating}</span>
                 <span className="gray">({reviewCount}) *</span>
-                <span className="gray">{country}</span>
+                <span className="gray">{location}</span>
             </div>
-            <p>{title}</p>
-            <p><span className="bold">From ${price} / person</span></p>
+            <p className="card--title">{title}</p>
+            <p className="card--price"><span className="bold">From ${price}</span> / person</p>
         </div>
     )
 }
