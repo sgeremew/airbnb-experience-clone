@@ -9,13 +9,7 @@ export default function App() {
   const cardComponents = cardData.map(data => {
     return (<Card 
       key={data.id}
-      img={data.coverImg}
-      rating={data.stats.rating}
-      reviewCount={data.stats.reviewCount}
-      location={data.location}
-      title={data.title}
-      price={data.price}
-      openSpots={data.openSpots}
+      data={data}
     />);
   })
 

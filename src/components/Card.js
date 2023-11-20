@@ -1,15 +1,26 @@
 import React from "react";
 
 export default function Card(props) {
+    // img={data.coverImg}
+    // location={data.location}
+    // openSpots={data.openSpots}
+    // price={data.price}
+    // rating={data.stats.rating}
+    // reviewCount={data.stats.reviewCount}
+    // title={data.title}
+
     const {
-        img,
-        title,
-        rating,
-        price,
-        reviewCount,
+        coverImg,
         location,
-        openSpots
-    } = props;
+        openSpots,
+        price,
+        title
+    } = props.data;
+
+    const {
+        rating,
+        reviewCount
+    } = props.data.stats;
 
 
     let badgeText;
@@ -22,11 +33,11 @@ export default function Card(props) {
     return (
         <div className="card">
             {badgeText && <div className="card--badge">{badgeText}</div>}
-            <img className="card--image" src={`../images/${img}`} />
+            <img className="card--image" src={`../images/${coverImg}`} />
             <div className="card--stats">
                 <img className="card--star" src="../images/star.png" />
                 <span>{rating}</span>
-                <span className="gray">({reviewCount}) *</span>
+                <span className="gray">({reviewCount}) •&nbsp;</span>
                 <span className="gray">{location}</span>
             </div>
             <p className="card--title">{title}</p>
